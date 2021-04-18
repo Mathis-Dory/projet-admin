@@ -1,0 +1,22 @@
+-> Commandes en ligne de commande (cmd) :
+---------------------------------------------------
+1. docker build -t serverweb:latest .
+2. docker run -itd serverweb:latest
+
+3. docker inspect vigilant_lichterman | findstr IP // sous windows
+3. docker inspect vigilant_lichterman | grep IP // sous MacOS
+4. docker run -itd -p 80:80 serverweb:latest
+
+
+-> Explications des commandes, à quoi elles servent 
+-----------------------------------------------------
+1. Cette ligne de commande va permettre de build l'image.
+2. Celle-ci va permettre d'exécuter l'image dans un container (dans ce cas-ci on parle du container 'vigilant_lichterman'.
+3. Cela va permettre à récupérer l'adresse ip du container (cette ligne de commande n'est pas indispensable dans la configuration sur serveur WEB.
+4. Va permettre de créer un container qui va utiliser le localhost.
+
+-----------------------------------------------------
+Commandes utiles pour vérifier la bonne installation de(s) images et/ou de(s) container(s):
+
+docker ps 
+docker images
