@@ -18,6 +18,7 @@ UTILISATION DE APACHE
 3. Cela va permettre à récupérer l'adresse ip du container (cette ligne de commande n'est pas indispensable dans la configuration sur serveur WEB.
 4. Va permettre de créer un container qui va utiliser le localhost.
 
+-> Pour tester la page WEB : localhost 
 -----------------------------------------------------
 Commandes utiles pour vérifier la bonne installation de(s) images et/ou de(s) container(s):
 
