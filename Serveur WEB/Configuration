@@ -7,6 +7,7 @@
 3. docker inspect vigilant_lichterman | grep IP // sous MacOS
 4. docker run -itd -p 80:80 serverweb:latest
 
+-> Attention le nom du container (vigilant_lichterman) n'est pas le même chez tout le monde !
 
 -> Explications des commandes, à quoi elles servent 
 -----------------------------------------------------
