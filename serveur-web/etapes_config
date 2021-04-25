@@ -9,6 +9,8 @@
 6. docker pull php:fpm -> image php pour le site web  : b2b.l1-2.ephec-ti.be
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Source : https://developer.ibm.com/tutorials/docker-dev-db/
+
 7. docker pull mysql:latest -> création de la base de données MySQL
 8. sudo docker run --name mysqlb2b -e MYSQL_ROOT_PASSWORD=my-secret-pw -d -p 3306:3306 mysql:latest
 9. sudo docker ps
