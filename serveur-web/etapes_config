@@ -1,0 +1,40 @@
+1. sudo docker pull nginx
+2. sudo docker run --name nginx -p 80:80 -p 443:443 -v /srv/docker/nginx:/usr/share/nginx/html:rw -d nginx
+3. sudo docker exec -ti nginx bash
+4. Aller dans le dossier /etc/nginx/conf.d/ -> vi default.conf (si jamais vi n'est pas correctement installé : apt-get install vi ou apt-get install nano
+    Y ajouter les trois configuration pour les 3 sites différents (voir le dossier conf.d)
+5. sudo docker inspect [nom du container] | findstr IPAddress -> get l'IP address de b2b server
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+6. docker pull php:fpm -> image php pour le site web  : b2b.l1-2.ephec-ti.be
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+7. docker pull mysql:latest -> création de la base de données MySQL
+8. sudo docker run --name mysqlb2b -e MYSQL_ROOT_PASSWORD=my-secret-pw -d -p 3306:3306 mysql:latest
+9. sudo docker ps
+10. sudo docker exec -ti [nom du docker mysql] bash
+11. mysql -u root -p; -> connexion
+12. ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlb2b';
+13. create database b2b CHARACTER SET 'utf8';
+
+14. create USER 'direteur'@'localhost' IDENTIFIED BY 'azerty';
+15. grant all privileges on * . * TO 'directeur'@'localhost';
+16. flush privileges;
+
+17. create USER 'employe'@'localhost' IDENTIFIED BY '123';
+18. grant SELECT ON * . * TO 'employe'@'localhost';
+19. flush privileges;
+
+20. show databases;
+21. use b2b;
+22. create table b2bboutique (ID int not null auto_increment, ARTICLE varchar(30) not null, DESCRIPTION varchar(100) not null, PRIX float(6,2) not null, primary key(ID));
+23. insert into b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("La guerre des clans", "Retour a l'etat sauvage", 12.99);
+24. insert into b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("Jouet de guerre en bois", "Elaborez un champ de guerre avec ces magnifiques petits soldats en bois", 45.99);
+25. insert into b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("Schtroumpf", "Peluche rouge et blanche representant le chef de la tribu des schtroumpf", 10.99);
+26. mysql -u [nom de l'utilisateur] -p; -> connexion avec utilisateur souhaité
+27. show tables; -> pour voir toutes les tables
+28. describe b2bboutique;
+29. select * from b2bboutique;
+
+30. sudo docker exec -ti [nom du docker mysql] bash
+31. mysqldump -u root -p b2b -P 3306 > b2b_save.sql
