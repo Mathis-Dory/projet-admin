@@ -16,3 +16,7 @@ EXPOSE 80 443
 
 #précise qu'on veut que le serveur http run en background
 CMD ["nginx", "-g", "daemon off;"]
+
+
+# docker build -t nginx:latest .
+# docker run --name nginx -p 80:80 -p 443:443 -d nginx
