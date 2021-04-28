@@ -21,12 +21,12 @@
                 $db = null;
             }
             catch (PDOException $e) {
-				echo 'Connection failed: ';
+				echo 'La connexion a échouée !';
             }
 
             echo '<hr><br>';
             echo '</pre>'; ?>
-<h1>Welcome to our site B2B</h1>
+<h1>Bienvenue sur le site B2B</h1>
 <?php echo phpinfo(); ?>
 </body>
 </html>
