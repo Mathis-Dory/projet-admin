@@ -25,6 +25,8 @@ COPY config/named.conf.default-zones /etc/bind/named.conf.default-zones
 COPY config/named.conf.local /etc/bind/named.conf.local
 COPY config/db.l1-2.ephec-ti.be /etc/bind/db.l1-2.ephec-ti.be
 
+EXPOSE 53/tcp
+EXPOSE 53/udp
 
 #Lance le service bind9 
 
