@@ -34,5 +34,5 @@ CMD ["/usr/sbin/named", "-g", "-c", "/etc/bind/named.conf", "-u", "bind"]
 
 # docker build -t dns .
 # docker tag dns mathisdory/projet-admin-2:dns
-# docker run -tdp 53:53 -v "$(pwd)/config:/etc/bind" <image>
-
+# docker run -tdp 53:53 -v "$(pwd)/config:/etc/bind" <image> ( en local )
+# docker run -tdp 53:53/udp -v config:/etc/bind <image> ( sur le vps )
