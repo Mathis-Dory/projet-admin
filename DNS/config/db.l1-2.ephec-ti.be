@@ -14,9 +14,9 @@ $TTL    604800
 @	IN	A	135.125.101.213
 @	IN	MX	10	mail
 ns	IN	A	135.125.101.213
-wwww	IN	A	135.125.101.244
-b2b	IN	CNAME	wwww
-intranet	IN	CNAME	wwww
+www	IN	A	135.125.101.244
+b2b	IN	CNAME	www
+intranet	IN	CNAME	www
 mail	IN	A	135.125.101.213
 smtp 	IN	CNAME	mail
 pop3	IN	CNAME	mail
