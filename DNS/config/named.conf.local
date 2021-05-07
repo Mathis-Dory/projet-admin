@@ -9,7 +9,7 @@
 // Ajout de la zone l1-2.ephec-ti
 
 zone "l1-2.ephec-ti.be"{
-	type master;
-	file "/etc/bind/db.l1-2.ephec-ti.be"; 
+	type master; // Serveur primaire qui contient les RR
+	file "/etc/bind/db.l1-2.ephec-ti.be"; // Localisation du fichier RR
 	
 };   
