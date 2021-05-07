@@ -21,10 +21,11 @@ options {
 	
 	// DNSSEC
 	dnssec-validation auto;
-
+	
+	// Permet de désactiver les réponses authoritaires
 	auth-nxdomain no;
 
-	// Ecoute
+	// Ecoute sur tout les ports et désactive la récursion car role du forwarder
 	allow-query {any; };
 	allow-recursion {none; };
 	listen-on {any; };
