@@ -40,3 +40,4 @@ Source : https://developer.ibm.com/tutorials/docker-dev-db/
 
 30. sudo docker exec -ti [nom du docker mysql] bash
 31. mysqldump -u root -p b2b -P 3306 > b2b_save.sql
+
