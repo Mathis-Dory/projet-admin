@@ -20,3 +20,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 # docker build -t nginx:latest .
 # docker run --name nginx -p 80:80 -p 443:443 -d nginx
+
+# docker run --name nginx -p 80:80 -p 443:443 -d mathisdory/projet-admin-2:nginx (vps)
+#  docker run --name nginx -p 80:80 -p 443:443 -d nginx (local)
