@@ -1,4 +1,8 @@
 1. sudo docker pull nginx
+
+# docker run --name nginx -p 80:80 -p 443:443 -d mathisdory/projet-admin-2:nginx (vps)
+#  docker run --name nginx -p 80:80 -p 443:443 -d nginx (local)
+
 2. sudo docker run --name nginx -p 80:80 -p 443:443 -v /srv/docker/nginx:/usr/share/nginx/html:rw -d nginx
 3. sudo docker exec -ti nginx bash
 4. Aller dans le dossier /etc/nginx/conf.d/ -> vi default.conf (si jamais vi n'est pas correctement installé : apt-get install vi ou apt-get install nano
