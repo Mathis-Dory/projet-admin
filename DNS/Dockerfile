@@ -1,7 +1,7 @@
 
 # Version Ubuntu
 
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 # Installe bind9
 

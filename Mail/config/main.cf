@@ -34,12 +34,12 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 
 
 smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
-myhostname = mail.woodytoys.be
-mydomain = woodytoys.be
+myhostname = mail.l1-2.ephec-ti.be
+mydomain = l1-2.ephec-ti.be
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 myorigin = /etc/mailname
-mydestination = mail.woodytoys.be, woodytoys.be, jacquesthebard\.localdomain, localhost.localdomain, localhost
+mydestination = $mydomain, $myhostname, debian.localdomain, localhost.localdomain, localhost
 relayhost = 
 mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128 135.125.101.213
 mailbox_size_limit = 10000
