@@ -6,7 +6,7 @@ RUN apt-get update && apt-get upgrade -y
 # add a hostname to avoid nobody as mail recepient
 RUN echo mail > /etc/hostname
 ADD etc-hosts.txt /etc/hosts
-RUN chown root:root /etc/hosts
+
 
 # install postfix
 RUN echo "postfix postfix/mail_mailer_type string Internet site" > preseed.txt
@@ -58,7 +58,7 @@ COPY config/20-pop3.conf /etc/dovecot/20-pop3.conf
 RUN mkdir /var/run/sshd
 ADD dovecot.conf /etc/dovecot/conf.d/99-test.conf
 ADD postfix.cf /postfix.cf.test
-RUN cat/postfix.cf.text >> /etc/postfix/main.cf && rm /postfix.cf.test
+RUN cat /postfix.cf.test >> /etc/postfix/main.cf && rm /postfix.cf.test
 
 # Enable ports for IMAP and POP3
 EXPOSE 143 993 110 995
