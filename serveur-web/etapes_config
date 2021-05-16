@@ -1,7 +1,8 @@
-1. sudo docker pull nginx
 
+# docker build -t nginx .
+# docker tag nginx mathisdory/projet-admin-2:nginx
 # docker run --name nginx -p 80:80 -p 443:443 -d mathisdory/projet-admin-2:nginx (vps)
-#  docker run --name nginx -p 80:80 -p 443:443 -d nginx (local)
+# docker run --name nginx -p 80:80 -p 443:443 -d nginx (local)
 
 2. sudo docker run --name nginx -p 80:80 -p 443:443 -v /srv/docker/nginx:/usr/share/nginx/html:rw -d nginx
 3. sudo docker exec -ti nginx bash
