@@ -24,9 +24,9 @@ Source : https://developer.ibm.com/tutorials/docker-dev-db/
 12. ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlb2b';
 13. create database b2b CHARACTER SET 'utf8';
 
-14. create USER 'direteur'@'localhost' IDENTIFIED BY 'azerty';
-15. grant all privileges on * . * TO 'directeur'@'localhost';
-16. flush privileges;
+create USER 'direteur'@'172.17.0.3' IDENTIFIED BY '123';
+grant all privileges on * . * TO 'directeur'@'172.17.0.3';
+flush privileges;
 
 17. create USER 'employe'@'localhost' IDENTIFIED BY '123';
 18. grant SELECT ON * . * TO 'employe'@'localhost';
