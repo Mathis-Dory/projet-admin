@@ -3,10 +3,19 @@
 <head>
 <meta charset='utf-8'>
 <title> Site B2B l1-2 - Config WEB</title>
+		<style type="text/css">
+			body {
+				background-color: #FFD79E;
+			}
+			p {
+				text-align: center;
+			}
+		</style>
 </head>
 <body>
+<h1>Bienvenue sur le site B2B</h1>
 <p> Responsable du service WEB - Eliott Lepage </p>
-<p>Vérification de la configuration de la db</p>
+<p>Output : données de la base de données</p><br><br>
 		<pre>
         <?php
             $query ='SELECT * FROM b2bboutique;';
@@ -27,7 +36,5 @@
 			
             echo '<hr><br>';
             echo '</pre>'; ?>
-<h1>Welcome to our site B2B</h1>
-<?php echo phpinfo(); ?>
 </body>
 </html>
