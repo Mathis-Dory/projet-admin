@@ -37,3 +37,11 @@ FLUSH PRIVILEGES;
 29. SELECT * from b2bboutique;
 
 31. mysqldump -u root -p b2b -P 3306 > b2b_save.sql
+
+# service nginx reload
+# nmap -p 3306 172.17.0.3
+# ip ad
+# mysql -h 172.17.0.3 -u root -p;
+# select user, host from mysql.user;
+# delete from mysql.user where user='directeur';
+
