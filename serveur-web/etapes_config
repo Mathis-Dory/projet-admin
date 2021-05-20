@@ -6,8 +6,8 @@
 
 sudo docker exec -ti nginx bash
 
-sudo docker inspect mysqlb2b | findstr IPAddress
-sudo docker inspect nginx | findstr IPAddress
+sudo docker inspect mysqlb2b | grep IPAddress
+sudo docker inspect nginx | grep IPAddress
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 # Création de la base de données MySQL
@@ -20,10 +20,17 @@ mysql -u root -p;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlb2b';
 CREATE DATABASE b2b CHARACTER SET 'utf8';
 
-CREATE USER 'directeur'@'172.17.0.2' IDENTIFIED BY '123';
+CREATE USER 'admin'@'172.17.0.2' IDENTIFIED BY '123';
 GRANT ALL PRIVILEGES ON b2b.*  TO 'directeur'@'172.17.0.2';
 FLUSH PRIVILEGES;
 
+CREATE USER 'directeur'@'172.17.0.2' IDENTIFIED BY '123';
+GRANT SELECT, UPDATE, INSERT, DELETE, CREATE ON b2b.*  TO 'directeur'@'172.17.0.2';
+FLUSH PRIVILEGES;
+
+CREATE USER 'employe'@'172.17.0.2' IDENTIFIED BY '123';
+GRANT SELECT ON b2b.*  TO 'employe'@'172.17.0.2';
+FLUSH PRIVILEGES;
 
 20. SHOW DATABASES;
 21. USE b2b;
