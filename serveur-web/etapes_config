@@ -41,6 +41,7 @@ FLUSH PRIVILEGES;
 # service nginx reload
 # nmap -p 3306 172.17.0.3
 # ip ad
+Le compte directeur ne peut se connecter seulement depuis 172.17.0.2 donc depuis le container nginx
 # mysql -h 172.17.0.3 -u root -p;
 # select user, host from mysql.user;
 # delete from mysql.user where user='directeur';
