@@ -20,14 +20,17 @@ mysql -u root -p;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlb2b';
 CREATE DATABASE b2b CHARACTER SET 'utf8';
 
+# mysql -h 172.17.0.3 -u admin -p;
 CREATE USER 'admin'@'172.17.0.2' IDENTIFIED BY 'administration';
 GRANT ALL PRIVILEGES ON b2b.*  TO 'directeur'@'172.17.0.2';
 FLUSH PRIVILEGES;
 
+# mysql -h 172.17.0.3 -u directeur -p;
 CREATE USER 'directeur'@'172.17.0.2' IDENTIFIED BY 'azerty';
 GRANT SELECT, UPDATE, INSERT, DELETE, CREATE ON b2b.*  TO 'directeur'@'172.17.0.2';
 FLUSH PRIVILEGES;
 
+# mysql -h 172.17.0.3 -u employe -p;
 CREATE USER 'employe'@'172.17.0.2' IDENTIFIED BY 'querty';
 GRANT SELECT ON b2b.*  TO 'employe'@'172.17.0.2';
 FLUSH PRIVILEGES;
