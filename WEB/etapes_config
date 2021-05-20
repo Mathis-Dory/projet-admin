@@ -47,6 +47,8 @@ FLUSH PRIVILEGES;
 
 31. mysqldump -u root -p b2b -P 3306 > b2b_save.sql
 
+Commandes utiles :
+
 # service nginx reload
 # nmap -p 3306 172.17.0.3
 # ip ad
