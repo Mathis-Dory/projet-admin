@@ -1,15 +1,15 @@
-from ubuntu:latest
-MAINTAINER Mail "Mail Config"
+FROM ubuntu:latest
+LABEL Mail="Mail Config"
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update 
+RUN apt-get upgrade -y
 
 # add a hostname to avoid nobody as mail recepient
-RUN echo mail > /etc/hostname
+RUN echo debian > /etc/hostname
 ADD etc-hosts.txt /etc/hosts
 
-
 # install postfix
-RUN echo "postfix postfix/mail_mailer_type string Internet site" > preseed.txt
+RUN echo "postfix postfix/mail_mailer_type string Internet site" >> preseed.txt
 RUN echo "postfix postfix/mailname string l1-2.ephec-ti.be" >> preseed.txt
 
 # use mailbox format
@@ -64,5 +64,7 @@ RUN cat /postfix.cf.test >> /etc/postfix/main.cf && rm /postfix.cf.test
 EXPOSE 143 993 110 995
 
 # Start Postfix and Dovecot services
-RUN /etc/init.d/postfix start
-RUN /etc/init.d/dovecot start
+
+#RUN /etc/init.d/postfix start
+#RUN /etc/init.d/dovecot start
+CMD ["/etc/init.d/postfix", "start", "&&", "/etc/init.d/dovecot", "start"]
