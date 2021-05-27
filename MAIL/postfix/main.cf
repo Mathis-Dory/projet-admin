@@ -22,6 +22,7 @@ compatibility_level = 2
 
 
 # TLS parameters
+smtpd_use_tls = yes
 smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
 smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
 smtpd_tls_security_level=may
@@ -46,3 +47,4 @@ inet_interfaces = all
 inet_protocols = all
 home_mailbox = Maildir/
 virtual_alias_maps = hash:/etc/postfix/virtual
+virtual_transport = lmtp:unix:private/dovecot-lmtp
