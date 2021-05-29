@@ -6,6 +6,10 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+// ajout des access list
+
+acl internals { 135.125.101.225; 135.125.101.244; 135.125.101.213; localhost; };
+
 // Ajout de la zone l1-2.ephec-ti
 
 zone "l1-2.ephec-ti.be"{
