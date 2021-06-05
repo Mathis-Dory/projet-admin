@@ -1,3 +1,2 @@
 postmaster: root
-root: debian
-info: debian
+root: concierge
