@@ -51,6 +51,6 @@ COPY /dovecot/* /etc/dovecot
 RUN adduser dovecot mail
 
 #RUN mkdir -p /etc/systemd/system/dovecot.service.d/
-#RUN cp /config/restart.conf /etc/systemd/system/dovecot.service.d
+#RUN cp /config/restart.conf /etc/systemd/system/dovecot.service.d/
 
-CMD ["sh","-c","postfix start-fg", "dovecot start-fg"]
+CMD service postfix start && service dovecot start && tail -f /dev/null
