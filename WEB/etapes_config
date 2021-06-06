@@ -1,3 +1,5 @@
+--> Ce fichier comprends toutes les directives / étapes qu'il faut suivre afin d'implémenter le service WEB de l'entrerpise WoodyToys
+
 # docker build -t nginx .
 # docker run --name nginx -p 80:80 -p 443:443 -d mathisdory/projet-admin-2:nginx (vps)
 # docker run --name nginx -p 80:80 -p 443:443 -d nginx (local)
