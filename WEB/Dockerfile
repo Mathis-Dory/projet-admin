@@ -9,7 +9,7 @@ RUN apt-get install -y nano
 # PHP
 RUN apt-get install -y php7.4 php7.4-fpm mysql-client
 
-# Crée les dossiers où vont se trouver les sites html et php (index.php et index.php)
+# Crée les dossiers où vont se trouver les sites html et php (index.html et index.php)
 RUN mkdir -p /var/www/statique/
 RUN mkdir -p /var/www/b2b/
 RUN mkdir -p /var/www/intranet/
@@ -32,4 +32,5 @@ RUN ln -s /etc/nginx/sites-available/intranet.conf /etc/nginx/sites-enabled/
 # Ecoute sur le port 80
 EXPOSE 80
 
+# Cette directive va lancer le service php7.4-fpm et lancer le service nginx en foreground
 CMD service php7.4-fpm start && nginx -g "daemon off;"
