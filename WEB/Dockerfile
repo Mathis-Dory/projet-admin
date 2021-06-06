@@ -6,7 +6,8 @@ RUN apt-get update
 # NGINX
 RUN apt-get install -y nginx
 RUN apt-get install -y nano
-# PHP
+
+# PHP et MySQL
 RUN apt-get install -y php7.4 php7.4-fpm mysql-client
 
 # Crée les dossiers où vont se trouver les sites html et php (index.html et index.php)
