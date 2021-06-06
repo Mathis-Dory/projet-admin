@@ -1,3 +1,6 @@
+<!-- Fichier .php concernant le site b2b de WoodyToys -->
+<!-- le site nous permety de récupérer les données de la base de données MySQL et également l'ajout de données dans celle-ci -->
+
 <!DOCTYPE html>
 <html>
 <head>
