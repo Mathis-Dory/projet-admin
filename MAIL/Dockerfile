@@ -40,15 +40,17 @@ EXPOSE 25
 
 EXPOSE 80 443 587 465 473 993 110 995
 
-RUN apt install -y certbot python3-certbot-nginx
-COPY /nginx/* /etc/nginx
-RUN certbot certonly -a nginx --agree-tos --no-eff-email --staple-ocsp --email g.cruz@students.ephec.be -d mail.l1-2.ephec-ti.be
+#RUN apt install -y certbot python3-certbot-nginx
+#COPY /nginx/* /etc/nginx
+#RUN certbot certonly -a nginx --agree-tos --no-eff-email --staple-ocsp --email g.cruz@students.ephec.be -d mail.l1-2.ephec-ti.be
 
-RUN apt install dovecot-core dovecot-imapd dovecot-pop3d dovecot-lmtpd
+RUN apt install -y dovecot-core dovecot-imapd dovecot-pop3d dovecot-lmtpd
+
+COPY /dovecot/* /etc/dovecot
 
 RUN adduser dovecot mail
 
-RUN mkdir -p /etc/systemd/system/dovecot.service.d/
-RUN cp /config/restart.conf /etc/systemd/system/dovecot.service.d
+#RUN mkdir -p /etc/systemd/system/dovecot.service.d/
+#RUN cp /config/restart.conf /etc/systemd/system/dovecot.service.d
 
-RUN /etc/init.d/postfix start
+CMD ["sh","-c","postfix start-fg", "dovecot start-fg"]
