@@ -34,26 +34,25 @@ CREATE USER 'employe'@'172.17.0.2' IDENTIFIED BY 'querty';
 GRANT SELECT ON b2b.*  TO 'employe'@'172.17.0.2';
 FLUSH PRIVILEGES;
 
-20. SHOW DATABASES;
-21. USE b2b;
-22. CREATE TABLE b2bboutique (ID int not null auto_increment, ARTICLE varchar(30) not null, DESCRIPTION varchar(100) not null, PRIX DECIMAL(5,2) not null, primary key(ID));
-23. INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("La guerre des clans", "Retour a l'etat sauvage", 12.99);
-24. INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("Jouet de guerre en bois", "Elaborez un champ de guerre avec ces magnifiques petits soldats en bois", 45.99);
-25. INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("Schtroumpf", "Peluche rouge et blanche representant le chef de la tribu des schtroumpf", 10.99);
-26. mysql -u [nom de l'utilisateur] -p; -> connexion avec utilisateur souhaité
-27. SHOW TABLES; -> pour voir toutes les tables
-28. DESCRIBE b2bboutique;
-29. SELECT * from b2bboutique;
+SHOW DATABASES;
+USE b2b;
+CREATE TABLE b2bboutique (ID int not null auto_increment, ARTICLE varchar(30) not null, DESCRIPTION varchar(100) not null, PRIX DECIMAL(5,2) not null, primary key(ID));
+INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("La guerre des clans", "Retour a l'etat sauvage", 12.99);
+INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("Jouet de guerre en bois", "Elaborez un champ de guerre avec ces magnifiques petits soldats en bois", 45.99);
+INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX) values ("Schtroumpf", "Peluche rouge et blanche representant le chef de la tribu des schtroumpf", 10.99);
+mysql -u [nom de l'utilisateur] -p; -> connexion avec utilisateur souhaité
+SHOW TABLES; -> pour voir toutes les tables
+DESCRIBE b2bboutique;
+SELECT * from b2bboutique;
 
-31. mysqldump -u root -p b2b -P 3306 > b2b_save.sql
+mysqldump -u root -p b2b -P 3306 > b2b_save.sql
 
 Commandes utiles :
 
 # service nginx reload
 # nmap -p 3306 172.17.0.3
-# ip ad
+
 Le compte directeur ne peut se connecter seulement depuis 172.17.0.2 donc depuis le container nginx
 # mysql -h 172.17.0.3 -u root -p;
 # select user, host from mysql.user;
 # delete from mysql.user where user='directeur';
-
