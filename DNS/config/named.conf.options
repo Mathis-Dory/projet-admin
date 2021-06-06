@@ -31,4 +31,5 @@ options {
 	listen-on {any; };
 	listen-on-v6 { any; };
 	recursion no;
+	version "unknown";
 };
