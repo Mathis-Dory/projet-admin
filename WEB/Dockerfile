@@ -1,4 +1,4 @@
-# A partir d'une image ubuntu
+# A partir d'une image ubuntu.
 FROM ubuntu:latest
 
 # Installation de nginx sur l'image + des installation de packages utiles au bon fonctionnement du site
