@@ -53,30 +53,32 @@
 	</form>
 
 	<?php
-		
-		$article = $_POST["article"];
-		$description = $_POST["description"];
-		$prix = $_POST["prix"];
-		$prix_float = floatval($prix);
-		
-		if( isset($_POST['submit'])) {
-			try {
-			  $conn = new PDO('mysql:host=172.17.0.3;dbname=b2b','directeur','azerty');
-			  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			
-			  $sql = "INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX)
-			  VALUES ('$article', '$description', $prix_float)";
-				
-			  $conn->exec($sql);
-			  echo "New record created successfully";
-			}
-			 
-			catch(PDOException $e) {
-				echo $sql . "<br>" . $e->getMessage();
-			}
-			$conn = null;
-		}
+
+        $article = $mysqli->real_escape_string(htmlentities($_POST["article"]));
+        $description =$mysqli->real_escape_string(htmlentities($_POST["description"]));
+        $prix =$mysqli->real_escape_string(htmlentities($_POST["prix"]));
+        $prix_float =$mysqli->real_escape_string(htmlentities(floatval($prix)));
+
+        if( isset($_POST['submit'])) {
+                try {
+                  $conn = new PDO('mysql:host=172.17.0.3;dbname=b2b','directeur','azerty');
+                  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                  $sql = "INSERT INTO b2bboutique (ARTICLE, DESCRIPTION, PRIX)
+                  VALUES ('$article', '$description', $prix_float)";
+
+                  $conn->exec($sql);
+                  echo "New record created successfully";
+                }
+
+                catch(PDOException $e) {
+                        echo $sql . "<br>" . $e->getMessage();
+                }
+                $conn = null;
+        }
 	?>
+
+
 
 	 <?php
 				$query ='SELECT * FROM b2bboutique;';
