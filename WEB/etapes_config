@@ -19,17 +19,17 @@ mysql -u root -p;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlb2b';
 CREATE DATABASE b2b CHARACTER SET 'utf8';
 
-# mysql -h 172.17.0.3 -u admin -p;
+# mysql -h 172.17.0.3 -u admin -p; -> commande à encoder depuis le terminal du container nginx afin de se connecter à la base de données MySQL
 CREATE USER 'admin'@'172.17.0.2' IDENTIFIED BY 'administration';
 GRANT ALL PRIVILEGES ON b2b.*  TO 'directeur'@'172.17.0.2';
 FLUSH PRIVILEGES;
 
-# mysql -h 172.17.0.3 -u directeur -p;
+# mysql -h 172.17.0.3 -u directeur -p; -> commande à encoder depuis le terminal du container nginx afin de se connecter à la base de données MySQL
 CREATE USER 'directeur'@'172.17.0.2' IDENTIFIED BY 'azerty';
 GRANT SELECT, UPDATE, INSERT, DELETE, CREATE ON b2b.*  TO 'directeur'@'172.17.0.2';
 FLUSH PRIVILEGES;
 
-# mysql -h 172.17.0.3 -u employe -p;
+# mysql -h 172.17.0.3 -u employe -p;  -> commande à encoder depuis le terminal du container nginx afin de se connecter à la base de données MySQL
 CREATE USER 'employe'@'172.17.0.2' IDENTIFIED BY 'querty';
 GRANT SELECT ON b2b.*  TO 'employe'@'172.17.0.2';
 FLUSH PRIVILEGES;
