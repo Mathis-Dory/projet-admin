@@ -1,3 +1,4 @@
+<!-- Fichier .php concernant la page WEB intranet uniquement accessible aux employés de l'entreprise WoodyToys -->
 <!DOCTYPE html>
 <html>
 	<head>
