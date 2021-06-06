@@ -54,10 +54,10 @@
 
 	<?php
 
-        $article = $mysqli->real_escape_string(htmlentities($_POST["article"]));
-        $description =$mysqli->real_escape_string(htmlentities($_POST["description"]));
-        $prix =$mysqli->real_escape_string(htmlentities($_POST["prix"]));
-        $prix_float =$mysqli->real_escape_string(htmlentities(floatval($prix)));
+        $article = htmlentities($_POST["article"]);
+        $description =htmlentities($_POST["description"]);
+        $prix =htmlentities($_POST["prix"]);
+        $prix_float =htmlentities(floatval($prix));
 
         if( isset($_POST['submit'])) {
                 try {
